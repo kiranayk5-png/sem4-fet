@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hire Me Contact Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f0f4ff;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e3a8a;
+        }
+
+        form {
+            width: 300px;
+            margin: auto;
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #c7d2fe;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            margin: 6px 0;
+            padding: 7px;
+            border: 1px solid #93c5fd;
+            border-radius: 4px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #2563eb;
+        }
+
+        button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            background-color: #2563eb;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        #output {
+            width: 300px;
+            margin: 15px auto;
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 5px solid #2563eb;
+        }
+    </style>
+
+    <script>
+        function saveData(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let subject = document.getElementById("subject").value;
+            let message = document.getElementById("message").value;
+
+            document.getElementById("output").innerHTML =
+                "<h3>Submitted Details</h3>" +
+                "Name: " + name + "<br>" +
+                "Email: " + email + "<br>" +
+                "Phone: " + phone + "<br>" +
+                "Subject: " + subject + "<br>" +
+                "Message: " + message;
+        }
+    </script>
+
+</head>
+
+<body>
+
+<h2>Hire Me</h2>
+
+<form onsubmit="saveData(event)">
+
+    <label>Full Name:</label>
+    <input type="text" id="name" required>
+
+    <label>Email:</label>
+    <input type="email" id="email" required>
+
+    <label>Phone:</label>
+    <input type="text" id="phone" required>
+
+    <label>Subject:</label>
+    <select id="subject">
+        <option value="">--Select--</option>
+        <option>Job</option>
+        <option>Freelance</option>
+        <option>Other</option>
+    </select>
+
+    <label>Message:</label>
+    <textarea id="message"></textarea>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<div id="output"></div>
+
+</body>
+</html>
