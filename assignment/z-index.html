@@ -9,10 +9,10 @@
             margin:0;
             padding:0;
             background-color:#fff7f0;
-            overflow:hidden;
             font-family:Arial, Helvetica, sans-serif;
             position:relative;
             height:100vh;
+            overflow:hidden;
         }
 
         /* Background Shapes */
@@ -25,7 +25,7 @@
             top:50%;
             left:40%;
             transform:translate(-50%, -50%);
-            z-index:1;
+            z-index:0; /* LOWER */
             opacity:0.6;
         }
 
@@ -38,14 +38,14 @@
             top:50%;
             left:60%;
             transform:translate(-50%, -50%) rotate(15deg);
-            z-index:2;
+            z-index:0; /* LOWER */
             opacity:0.6;
         }
 
         /* Content */
         section{
             position:relative;
-            z-index:3;
+            z-index:10; /* HIGHER */
             text-align:center;
             padding:80px;
         }
