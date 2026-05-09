@@ -1,16 +1,99 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Assignments</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
-    *{
-      background-color: lightpink;  
+    body{
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      text-align: center;
     }
 
-    p{
-      color: red;
+    h1{
+      margin-top: 30px;
+      font-size: 34px;
+      color: #38bdf8;
+      letter-spacing: 1px;
+    }
+
+    .container{
+      max-width: 900px;
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    a{
+      text-decoration: none;
+      background: #1e293b;
+      color: #38bdf8;
+      padding: 18px;
+      border-radius: 12px;
+      font-weight: bold;
+      border: 1px solid #334155;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    a::before{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, #38bdf8, transparent);
+      top: 0;
+      left: -100%;
+      transition: 0.5s;
+    }
+
+    a:hover::before{
+      left: 100%;
+    }
+
+    a:hover{
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 0 15px #38bdf8;
+      background: #020617;
+      color: white;
+    }
+
+    footer{
+      margin: 20px;
+      font-size: 14px;
+      color: #94a3b8;
     }
   </style>
-  
-  <body>
-   <h1> welcome to my page</h1>
-    <p>Hello Guys</p>
-  </body>
+</head>
+
+<body>
+
+  <h1>My Assignments</h1>
+
+  <div class="container">
+    <a href="https://kiranayk5-png.github.io/sem4-fet/assignment/K1.html" target="_blank">Assignment 1</a>
+    <a href="https://kiranayk5-png.github.io/sem4-fet/assignment/k2.html" target="_blank">Assignment 2</a>
+    <a href="https://kiranayk5-png.github.io/sem4-fet/assignment/k3.html" target="_blank">Assignment 3</a>
+    <a href="https://kiranayk5-png.github.io/sem4-fet/assignment/k4.html" target="_blank">Assignment 4</a>
+    <a href="https://kiranayk5-png.github.io/sem4-fet/assignment/one_css.html" target="_blank">Assignment 5</a>
+    <a href="https://kiranayk5-png.github.io/sem4-fet/assignment/two_css.html" target="_blank">Assignment 6</a>
+    <a href="https://kiranayk5-png.github.io/sem4-fet/assignment/ki1.html" target="_blank">Assignment 7</a>
+    <a href="https://kiranayk5-png.github.io/sem4-fet/assignment/ki2.html" target="_blank">Assignment 8</a>
+    <a href="https://kiranayk5-png.github.io/sem4-fet/assignment/ki3.html" target="_blank">Assignment 9</a>
+    <a href="https://kiranayk5-png.github.io/sem4-fet/assignment/z-index.html" target="_blank">Assignment 10</a>
+    <a href="https://kiranayk5-png.github.io/sem4-fet/assignment/do-while.html" target="_blank">Assignment 11</a>
+  </div>
+
+  <footer>
+    © 2026 Kirana YK | Portfolio
+  </footer>
+
+</body>
 </html>
