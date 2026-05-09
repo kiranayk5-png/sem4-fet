@@ -1,64 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Portfolio</title>
+    <title>My Portfolio - Mission Statement</title>
 
     <style>
+
         body{
             margin:0;
-            font-family:Arial;
-            background:#fff7f0;
+            padding:0;
+            background-color:#fff7f0;
+            font-family:Arial, Helvetica, sans-serif;
+            position:relative;
+            height:100vh;
+            overflow:hidden;
         }
 
-        /* Shapes (background) */
+        /* Background Shapes */
         .circle{
             position:absolute;
-            width:300px;
-            height:300px;
-            background:#ffd6a5;
+            width:420px;
+            height:420px;
+            background-color:#ffd6a5;
             border-radius:50%;
             top:50%;
             left:40%;
-            transform:translate(-50%,-50%);
-            z-index:-1;
+            transform:translate(-50%, -50%);
+            z-index:0; /* LOWER */
+            opacity:0.6;
         }
 
         .square{
             position:absolute;
-            width:300px;
-            height:250px;
-            background:#caffbf;
+            width:440px;
+            height:340px;
+            background-color:#caffbf;
+            border-radius:20px;
             top:50%;
             left:60%;
-            transform:translate(-50%,-50%) rotate(10deg);
-            z-index:-1;
+            transform:translate(-50%, -50%) rotate(15deg);
+            z-index:0; /* LOWER */
+            opacity:0.6;
         }
 
         /* Content */
         section{
+            position:relative;
+            z-index:10; /* HIGHER */
             text-align:center;
-            padding:60px;
+            padding:80px;
         }
 
-        h1{ color:#1d3557; }
-        h2{ color:#e76f51; }
-        h3{ color:#2a9d8f; }
-        p{ color:#444; }
+        #k1{
+            color:#1d3557;
+            font-size:45px;
+        }
+
+        .h{
+            color:#e76f51;
+            font-size:28px;
+        }
+
+        .k2{
+            color:#2a9d8f;
+            margin-top:30px;
+        }
+
+        p{
+            color:#444;
+            font-size:18px;
+            line-height:1.6;
+        }
 
         .dash{
-            width:100px;
+            width:120px;
             height:4px;
-            background:#e76f51;
-            margin:15px auto;
+            background-color:#e76f51;
+            margin:20px auto;
+            border-radius:10px;
         }
 
         button{
-            padding:10px 20px;
-            background:#2a9d8f;
+            padding:12px 24px;
+            background-color:#2a9d8f;
             color:white;
             border:none;
+            border-radius:8px;
             cursor:pointer;
+            font-size:16px;
+            margin:10px;
         }
+
+        button:hover{
+            background-color:#1b7f73;
+        }
+
     </style>
 </head>
 
@@ -68,22 +103,35 @@
     <div class="square"></div>
 
     <section>
-        <h1>Hi, I'm Kirana Y K</h1>
-        <h2>Aspiring Software Engineer</h2>
+
+        <h1 id="k1">Hi, I'm Kirana Y K</h1>
+
+        <h2 class="h">Aspiring Software Engineer</h2>
 
         <div class="dash"></div>
 
-        <h3>Building Efficient Solutions</h3>
-        <p>I love creating simple programs.</p>
+        <h3 class="k2">Building Efficient and Scalable Solutions</h3>
+
+        <p>
+            I am a passionate computer science student focused on developing
+            innovative and efficient software solutions.
+        </p>
+
+        <h3 class="k2">My Tech Stack</h3>
+
+        <p>
+            C, C++, Java, HTML, CSS, JavaScript
+        </p>
 
         <button onclick="showMsg()">Click Me</button>
+
     </section>
 
-    <script>
-        function showMsg(){
-            alert("Thanks for visiting!");
-        }
-    </script>
+<script>
+    function showMsg(){
+        alert("Thanks for visiting!");
+    }
+</script>
 
 </body>
 </html>
