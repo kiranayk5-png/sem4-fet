@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio - Mission Statement</title>
+
+    <style>
+
+        body{
+            margin:0;
+            padding:0;
+            background-color:#fff7f0;
+            overflow:hidden;
+            font-family:Arial, Helvetica, sans-serif;
+            position:relative;
+            height:100vh;
+        }
+
+        .circle{
+            position:absolute;
+            width:420px;
+            height:420px;
+            background-color:#ffd6a5;
+            border-radius:50%;
+            top:50%;
+            left:40%;
+            transform:translate(-50%, -50%);
+            z-index:1;
+            opacity:0.6;
+        }
+
+        .square{
+            position:absolute;
+            width:440px;
+            height:340px;
+            background-color:#caffbf;
+            border-radius:20px;
+            top:50%;
+            left:60%;
+            transform:translate(-50%, -50%) rotate(15deg);
+            z-index:2;
+            opacity:0.6;
+        }
+
+        section{
+            position:relative;
+            z-index:3;
+            text-align:center;
+            padding:80px;
+        }
+
+        #k1{
+            color:#1d3557;
+            font-size:45px;
+        }
+
+        .h{
+            color:#e76f51;
+            font-size:28px;
+        }
+
+        .k2{
+            color:#2a9d8f;
+            margin-top:30px;
+        }
+
+        p{
+            color:#444;
+            font-size:18px;
+            line-height:1.6;
+        }
+
+        .dash{
+            width:120px;
+            height:4px;
+            background-color:#e76f51;
+            margin:20px auto;
+            border-radius:10px;
+        }
+
+        button{
+            padding:12px 24px;
+            background-color:#2a9d8f;
+            color:white;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+            margin:10px;
+        }
+
+        button:hover{
+            background-color:#1b7f73;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="circle"></div>
+    <div class="square"></div>
+
+    <section>
+
+        <h1 id="k1">Hi, I'm Kirana Y K</h1>
+
+        <h2 id="role" class="h">Aspiring Software Engineer</h2>
+
+        <button onclick="editRole()">Edit Role</button>
+
+        <div class="dash"></div>
+
+        <h3 class="k2">Building Efficient and Scalable Solutions</h3>
+
+        <p>
+            I am a passionate computer science student focused on developing
+            innovative and efficient software solutions.
+        </p>
+
+        <h3 class="k2">My Tech Stack</h3>
+
+        <p>
+            C, C++, Java, HTML, CSS, JavaScript
+        </p>
+
+        <button onclick="showMsg()">Click Me</button>
+
+    </section>
+
+<script>
+    // Welcome message
+    window.onload = function(){
+        alert("Welcome to Kirana's Portfolio!");
+    };
+
+    // Button click message
+    function showMsg(){
+        alert("Thanks for visiting!");
+    }
+
+    // Edit role
+    function editRole(){
+        let newRole = prompt("Enter your new role:");
+        if(newRole != "" && newRole != null){
+            document.getElementById("role").innerText = newRole;
+        }
+    }
+</script>
+
+</body>
+</html>
