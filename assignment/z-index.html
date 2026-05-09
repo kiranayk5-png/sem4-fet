@@ -15,6 +15,7 @@
             height:100vh;
         }
 
+        /* Background Shapes */
         .circle{
             position:absolute;
             width:420px;
@@ -41,6 +42,7 @@
             opacity:0.6;
         }
 
+        /* Content */
         section{
             position:relative;
             z-index:3;
@@ -104,9 +106,7 @@
 
         <h1 id="k1">Hi, I'm Kirana Y K</h1>
 
-        <h2 id="role" class="h">Aspiring Software Engineer</h2>
-
-        <button onclick="editRole()">Edit Role</button>
+        <h2 class="h">Aspiring Software Engineer</h2>
 
         <div class="dash"></div>
 
@@ -128,22 +128,8 @@
     </section>
 
 <script>
-    // Welcome message
-    window.onload = function(){
-        alert("Welcome to Kirana's Portfolio!");
-    };
-
-    // Button click message
     function showMsg(){
         alert("Thanks for visiting!");
-    }
-
-    // Edit role
-    function editRole(){
-        let newRole = prompt("Enter your new role:");
-        if(newRole != "" && newRole != null){
-            document.getElementById("role").innerText = newRole;
-        }
     }
 </script>
 
