@@ -15,7 +15,7 @@
         }
 
         form {
-            width: 300px;
+            width: 320px;
             margin: auto;
             background: #ffffff;
             padding: 15px;
@@ -31,26 +31,30 @@
             border-radius: 4px;
         }
 
-        input:focus, select:focus, textarea:focus {
-            border-color: #2563eb;
+        fieldset {
+            margin-top: 10px;
+            border: 1px solid #93c5fd;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        legend {
+            color: #2563eb;
+            font-weight: bold;
         }
 
         button {
             width: 100%;
             padding: 8px;
-            margin-top: 5px;
+            margin-top: 10px;
             border: none;
             color: white;
             cursor: pointer;
             background-color: #2563eb;
         }
 
-        button:hover {
-            background-color: #1d4ed8;
-        }
-
         #output {
-            width: 300px;
+            width: 320px;
             margin: 15px auto;
             background: #ffffff;
             padding: 10px;
@@ -65,17 +69,31 @@
 
             let name = document.getElementById("name").value;
             let email = document.getElementById("email").value;
-            let phone = document.getElementById("phone").value;
-            let subject = document.getElementById("subject").value;
-            let message = document.getElementById("message").value;
+            let dob = document.getElementById("dob").value;  // ✅ DOB added
+
+            let gender = document.querySelector('input[name="gender"]:checked');
+            gender = gender ? gender.value : "Not selected";
+
+            let skills = document.getElementsByName("skills");
+            let selectedSkills = "";
+
+            for (let i = 0; i < skills.length; i++) {
+                if (skills[i].checked) {
+                    selectedSkills += skills[i].value + ", ";
+                }
+            }
+
+            if (selectedSkills === "") {
+                selectedSkills = "None";
+            }
 
             document.getElementById("output").innerHTML =
                 "<h3>Submitted Details</h3>" +
                 "Name: " + name + "<br>" +
                 "Email: " + email + "<br>" +
-                "Phone: " + phone + "<br>" +
-                "Subject: " + subject + "<br>" +
-                "Message: " + message;
+                "DOB: " + dob + "<br>" +   // ✅ show DOB
+                "Gender: " + gender + "<br>" +
+                "Skills: " + selectedSkills;
         }
     </script>
 
@@ -93,19 +111,23 @@
     <label>Email:</label>
     <input type="email" id="email" required>
 
-    <label>Phone:</label>
-    <input type="text" id="phone" required>
+    <!-- ✅ DOB FIELD ADDED -->
+    <label>Date of Birth:</label>
+    <input type="date" id="dob" required>
 
-    <label>Subject:</label>
-    <select id="subject">
-        <option value="">--Select--</option>
-        <option>Job</option>
-        <option>Freelance</option>
-        <option>Other</option>
-    </select>
+    <fieldset>
+        <legend>Gender</legend>
+        <input type="radio" name="gender" value="Male"> Male <br>
+        <input type="radio" name="gender" value="Female"> Female <br>
+        <input type="radio" name="gender" value="Other"> Other
+    </fieldset>
 
-    <label>Message:</label>
-    <textarea id="message"></textarea>
+    <fieldset>
+        <legend>Skills</legend>
+        <input type="checkbox" name="skills" value="HTML"> HTML <br>
+        <input type="checkbox" name="skills" value="CSS"> CSS <br>
+        <input type="checkbox" name="skills" value="JavaScript"> JavaScript
+    </fieldset>
 
     <button type="submit">Submit</button>
 
